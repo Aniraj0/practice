@@ -11,6 +11,7 @@ class Practice(models.Model):
     completed = models.BooleanField(default = False, blank = True)
     updated = models.DateTimeField(auto_now = True, blank = True)
     user = models.ForeignKey(User, on_delete = models.CASCADE, blank = True, null = True)
+    id = models.AutoField(primary_key=True)
 
     def __str__(self):
         return self.task

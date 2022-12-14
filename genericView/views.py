@@ -24,7 +24,7 @@ class genericViews(GenericViewSet):
 
     def list(self, request):
         serializer = self.get_serializer(self.get_queryset(), many=True)
-        return self.get_paginated_response(self.paginate_queryset(serializer.data))
+        return Response(serializer.data)
 
     def retrieve(self, request, pk):
         item = self.get_object()
